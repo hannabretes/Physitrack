@@ -1,8 +1,5 @@
 from selenium.webdriver.common.by import By
 
-
-# for maintainability we can seperate web objects by page name
-
 class MainPageLocators(object):
     LOGIN = (By.CLASS_NAME, 'button button-small w-button')
     COUNTRY_USA = (By.CSS_SELECTOR, '#country_us')
