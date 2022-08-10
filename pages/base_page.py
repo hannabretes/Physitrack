@@ -6,8 +6,7 @@ from selenium.common.exceptions import TimeoutException
 
 # this Base class is serving basic attributes for every single page inherited from Page class
 class BasePage(object):
-    def __init__(self, driver, base_url='https://www.physitrack.co.uk/'):
-        self.base_url = base_url
+    def __init__(self, driver):
         self.driver = driver
         self.timeout = 30
 
@@ -15,7 +14,6 @@ class BasePage(object):
         return self.driver.find_element(*locator)
 
     def open(self, url):
-        url = self.base_url + url
         self.driver.get(url)
 
     def hover(self, *locator):
@@ -25,7 +23,7 @@ class BasePage(object):
 
     def wait_element(self, *locator):
         try:
-            WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(locator))
         except TimeoutException:
             print("\n * ELEMENT NOT FOUND WITHIN GIVEN TIME! --> %s" %(locator[1]))
             self.driver.quit()

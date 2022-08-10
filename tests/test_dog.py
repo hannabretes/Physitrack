@@ -2,16 +2,19 @@ import pytest
 from Physitrack.pages.base_page import BasePage
 from Physitrack.pages.login_page import LoginPage
 from Physitrack.pages.select_country_page import SelectCountryPage
-from Physitrack.tests.base_test import BaseTest
-
-
-# I am using python unittest for asserting cases.
-# In this module, there should be test cases.
-# If you want to run it, you should type: python <module-name.py>
-
+from Physitrack.utils.conftest import BaseTest
+from Physitrack.pages.add_program_page import AddProgramPage
+@pytest.mark.usefixtures("setup")
 class TestDog(BaseTest):
-
     def test_page_load(self):
+        print("First testcase")
         page = BasePage(self.driver)
+        login = LoginPage(self.driver)
+        add_program = AddProgramPage(self.driver)
+        select_country = SelectCountryPage(self.driver)
         page.open("https://www.physitrack.co.uk/")
+        login.click_login_button()
+        select_country.select_country_USA()
+        login.click_back_to_demo()
+        add_program.click_add_to_card()
 

@@ -6,6 +6,8 @@ class SelectCountryPage(BasePage):
         self.locator = MainPageLocators
         super(SelectCountryPage, self).__init__(driver)
 
+
     def select_country_USA(self):
+        self.driver.switch_to.window(self.driver.window_handles[1])
         self.find_element(*self.locator.COUNTRY_USA).click()
         self.find_element(*self.locator.SELECT_COUNTRY).click()

@@ -8,3 +8,5 @@ class LoginPage(BasePage):
 
     def click_login_button(self):
         self.find_element(*self.locator.LOGIN).click()
+    def click_back_to_demo(self):
+        self.find_element(*self.locator.BACK_TO_DEMO_BUTTON).click()
