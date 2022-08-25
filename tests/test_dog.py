@@ -16,5 +16,5 @@ class TestDog(BaseTest):
         login.click_login_button()
         select_country.select_country_USA()
         login.click_back_to_demo()
-        add_program.click_add_to_card()
+        add_program.add_to_card()
 
