@@ -1,5 +1,5 @@
-from Physitrack.utils.locators import MainPageLocators
-from Physitrack.pages.base_page import BasePage
+from utils.locators import MainPageLocators
+from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 class LoginPage(BasePage):
     LOGIN = (By.XPATH, '//a[@class="button-secondary button-small margin-left w-button"]')

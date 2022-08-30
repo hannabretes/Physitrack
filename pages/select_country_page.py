@@ -1,5 +1,5 @@
-from Physitrack.utils.locators import MainPageLocators
-from Physitrack.pages.base_page import BasePage
+from utils.locators import MainPageLocators
+from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 class SelectCountryPage(BasePage):
     COUNTRY_USA = (By.ID, 'country_us')

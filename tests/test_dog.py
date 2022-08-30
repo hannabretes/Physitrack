@@ -1,9 +1,9 @@
 import pytest
-from Physitrack.pages.base_page import BasePage
-from Physitrack.pages.login_page import LoginPage
-from Physitrack.pages.select_country_page import SelectCountryPage
-from Physitrack.utils.conftest import BaseTest
-from Physitrack.pages.add_program_page import AddProgramPage
+from pages.base_page import BasePage
+from pages.login_page import LoginPage
+from pages.select_country_page import SelectCountryPage
+from utils.conftest import BaseTest
+from pages.add_program_page import AddProgramPage
 @pytest.mark.usefixtures("setup")
 class TestDog(BaseTest):
     def test_page_load(self):
