@@ -1,20 +1,16 @@
-from utils.locators import MainPageLocators
 from pages.base_page import BasePage
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 class AddProgramPage(BasePage):
-    CLOSE_POPUP = (By.XPATH, '//div[contains(@class, "current")]//a[@rel="modal:close"]')
-    ADD_TO_CARD_BUTTON = (By.XPATH, '//button[@class="cart w-inline-block btn-link-icon pad-left "]')
-    ASSIGN_PROGRAM = (By.ID, 'assign-program-modal-button')
-    SELECT_PROGRAM = (By.CLASS_NAME, 'react-select__value-container css-1hwfws3')
-    SELECT_USER = (By.XPATH, '//span[@class="ladda-label"]')
+    close_popup = (By.XPATH, '//div[contains(@class, "current")]//a[@rel="modal:close"]')
+    add_to_card_button = (By.XPATH, '//div[@class="w-inline-block inline-margin-fix"]')
+    assign_program = (By.ID, 'assign-program-modal-button')
+    select_program = (By.CLASS_NAME, 'react-select__value-container css-1hwfws3')
+    select_user = (By.XPATH, '//span[@class="ladda-label"]')
+    bird_dog_button = (By.XPATH, '/html/body/div[8]/div[1]/div/div[2]/div[2]/div[1]/div[2]/a/span/span')
     def __init__(self, driver):
-        self.locator = MainPageLocators
         super(AddProgramPage, self).__init__(driver)
     def add_to_card(self):
         page = BasePage(self.driver)
-        #page.do_click(self.CLOSE_POPUP)
-        #self.driver.execute_script("arguments[0].click();", self.CLOSE_POPUP)
-        #self.do_click(self.locator.CLOSE_POPUP).click()
-        self.do_click(self.locator.BIRD_DOG_EXERCISE)
-        self.do_click(self.locator.ADD_TO_CARD_BUTTON)
+        self.do_click(self.bird_dog_button)
+        self.do_click(self.add_to_card_button)
