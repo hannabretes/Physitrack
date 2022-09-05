@@ -1,7 +1,10 @@
 import pytest
+from pages.base_page import BasePage
+from pages.login_page import LoginPage
 from pages.select_country_page import SelectCountryPage
 from utils.conftest import driver
 from utils.conftest import login_page
+
 
 def test_page_load(login_page):
     print("First testcase")
