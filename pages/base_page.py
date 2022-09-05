@@ -5,8 +5,7 @@ from selenium.webdriver.support import expected_conditions as ec
 # this Base class is serving basic attributes for every single page inherited from Page class
 class BasePage(object):
     def __init__(self, driver):
-        self.driver = driver
-        self.wait = WebDriverWait(driver, 10)
+        super(BasePage, self).__init__(driver)
 
     def open(self, url):
         self.driver.get(url)
